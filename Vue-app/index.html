@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+    <style>
+    .old-car{
+        background-color: red;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1 v-bind:class="myClass">{{message}}</h1>
+        <label for="">
+            <input type="radio" name="visibility" value="1" id="" v-model="isVisible">
+            Matomas
+        </label>
+        <label for="">
+            <input type="radio" name="visibility" value="0" id="" v-model="isVisible">
+            Pasleptas
+       </label>
+        <br> Reiksme: {{isVisible}}
+
+        <p v-if="isVisible==='1'">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque, autem! Magni illum eveniet ex alias perferendis
+            illo libero animi officia quod obcaecati voluptas, ea ipsam laboriosam iure beatae quos sapiente! Lorem ipsum,
+            dolor sit amet consectetur adipisicing elit. Atque, autem! Magni illum eveniet ex alias perferendis illo libero
+            animi officia quod obcaecati voluptas, ea ipsam laboriosam iure beatae quos sapiente!Lorem ipsum, dolor sit amet
+            consectetur adipisicing elit. Atque, autem! Magni illum eveniet ex alias perferendis illo libero animi officia
+            quod obcaecati voluptas, ea ipsam laboriosam iure beatae quos sapiente!Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Atque, autem! Magni illum eveniet ex alias perferendis illo libero animi officia quod obcaecati
+            voluptas, ea ipsam laboriosam iure beatae quos sapiente!</p>
+        <hr>
+        <input type="text" v-model="tekstas" name="" id=""><br> Mano tekstas {{tekstas}}</strong>
+        <hr>
+        <h2>Automobiliai</h2>
+        <form action="">
+            Marke:<input type="text" class="text" name="marke" v-model="newCar.marke">
+            Modelis:<input type="text" class="text" name="modelis" v-model="newCar.modelis">
+            Metai:<input type="text" class="text" name="metai" v-model="newCar.metai">
+            <button type="button" v-on:click="addCar">Prideti</button>
+        </form>
+        <ul v-for="automobilis in automobiliai">
+            <li v-bind:class="{ 'old-car': arSenasAuto(automobilis.metai) }"> {{automobilis.marke}}  {{automobilis.modelis}}  ({{automobilis.metai}}metai) </li>
+        </ul>
+
+
+    </div>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
