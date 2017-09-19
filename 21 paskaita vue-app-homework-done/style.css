@@ -1,0 +1,21 @@
+img {
+    max-width: 150px
+}
+
+label {
+    float: left;
+    margin-right: 20px;
+}
+
+header{
+    background: url("img/album-covers.jpg");
+    padding: 20px;
+   
+}
+
+
+h1{
+    color: wheat;
+  
+    
+}
